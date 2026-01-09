@@ -13,12 +13,22 @@
         .chart-container { position: relative; height: 280px; width: 100%; }
         .gradient-text { background: linear-gradient(135deg, #fbbf24, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .danger-badge { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .home-btn { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 50; transition: all 0.3s ease; }
+        .home-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="p-4 md:p-10 leading-relaxed">
+    <!-- Home Button -->
+    <a href="index.html" class="home-btn glass-card p-3 flex items-center justify-center text-slate-200 hover:text-white hover:bg-slate-700/50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span class="ml-2 text-sm font-bold hidden md:inline">홈으로</span>
+    </a>
+
     <div class="max-w-6xl mx-auto">
         <!-- Header -->
-        <header class="text-center mb-12">
+        <header class="text-center mb-12 pt-12 md:pt-0">
             <div class="inline-flex items-center px-4 py-2 danger-badge rounded-full text-sm font-bold mb-4 uppercase tracking-widest">
                 Critical Climate Report
             </div>
