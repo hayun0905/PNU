@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지구 온난화 심층 분석 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .chart-container { position: relative; height: 280px; width: 100%; }
+        .gradient-text { background: linear-gradient(135deg, #fbbf24, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .danger-badge { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+    </style>
+</head>
+<body class="p-4 md:p-10 leading-relaxed">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <div class="inline-flex items-center px-4 py-2 danger-badge rounded-full text-sm font-bold mb-4 uppercase tracking-widest">
+                Critical Climate Report
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+                지구의 경고: <span class="gradient-text">기후 임계점</span>
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto font-medium">
+                2020-2024 데이터 분석 결과, 지구는 우리가 생각한 것보다 훨씬 빠르게 뜨거워지고 있습니다.
+            </p>
+        </header>
+
+        <!-- Main Insights Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <!-- CO2 Insight -->
+            <div class="glass-card p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl text-blue-400">☁️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">거대한 열 담요, CO2</h3>
+                    <p class="text-slate-400 text-sm mb-4">5년간 10.4 ppm 상승. 매년 약 2.6 ppm씩 꾸준히 증가하며 지구의 열 방출을 막고 있습니다.</p>
+                </div>
+                <div class="text-3xl font-black text-blue-400">428.0 ppm</div>
+            </div>
+
+            <!-- Methane Insight -->
+            <div class="glass-card p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl text-emerald-400">🔥</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">강력한 추적자, 메탄</h3>
+                    <p class="text-slate-400 text-sm mb-4">농도는 낮지만 열을 가두는 능력은 CO2의 최대 80배! 5년 사이 50 ppb가 증가했습니다.</p>
+                </div>
+                <div class="text-3xl font-black text-emerald-400">2022 ppb</div>
+            </div>
+
+            <!-- Temp Insight -->
+            <div class="glass-card p-8 flex flex-col justify-between border-red-500/30">
+                <div>
+                    <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl text-red-400">🌡️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-red-400">2023년의 미스터리</h3>
+                    <p class="text-slate-400 text-sm mb-4">1년 만에 기온 1.0°C 폭등. 이는 단순한 변화를 넘어 기후 시스템의 고장을 의미할 수 있습니다.</p>
+                </div>
+                <div class="text-3xl font-black text-red-500">+1.0°C <span class="text-sm font-normal text-slate-500">(22-23)</span></div>
+            </div>
+        </div>
+
+        <!-- Visual Analysis Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Chart 1: Temperature Line -->
+            <div class="glass-card p-6">
+                <h3 class="text-lg font-bold mb-6 flex items-center">
+                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span> 지구 평균 기온 변화 추이
+                </h3>
+                <div class="chart-container">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Gases Bar -->
+            <div class="glass-card p-6">
+                <h3 class="text-lg font-bold mb-6 flex items-center">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> 온실가스 농도 가속화
+                </h3>
+                <div class="chart-container">
+                    <canvas id="gasChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deep Dive Report Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="glass-card p-8">
+                <h2 class="text-2xl font-bold mb-4 text-slate-200">데이터가 주는 시사점</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-emerald-500 mr-3 mt-1">✔</div>
+                        <p class="text-slate-400 text-sm"><span class="text-slate-200 font-bold">비선형적 상승:</span> 기온은 산술적으로 오르지 않습니다. 온실가스가 임계점에 도달하면 폭발적으로 상승합니다.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-emerald-500 mr-3 mt-1">✔</div>
+                        <p class="text-slate-400 text-sm"><span class="text-slate-200 font-bold">New Normal:</span> 2024년의 고온 유지는 과거로 돌아가기 힘든 '새로운 기준'이 되었음을 뜻합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-8 bg-gradient-to-br from-slate-800 to-slate-900 border-none">
+                <h2 class="text-2xl font-bold mb-4 text-slate-200">청소년 기후 행동 제언</h2>
+                <ul class="text-sm text-slate-400 space-y-2">
+                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span> 에너지 전환: 깨끗한 에너지 사용 지지</li>
+                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span> 일상의 실천: 걷기, 전기 아끼기, 분리수거</li>
+                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span> 목소리 내기: 기후 위기 데이터를 주변에 공유</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="text-center text-slate-600 text-xs py-10 border-t border-slate-800">
+            데이터 출처: 온난화 자료.csv | 본 자료는 교육용 목적으로 제작되었습니다.
+        </footer>
+    </div>
+
+    <script>
+        const years = ['2020', '2021', '2022', '2023', '2024'];
+        const tempValues = [13.4, 13.5, 13.6, 14.6, 14.7];
+        const co2Values = [417.6, 421.4, 422.8, 425.6, 428.0];
+        const ch4Values = [1972, 1988, 2004, 2010, 2022];
+
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.05)';
+
+        // Temp Chart
+        new Chart(document.getElementById('tempChart'), {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: '평균 기온 (°C)',
+                    data: tempValues,
+                    borderColor: '#ef4444',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#ef4444',
+                    pointRadius: 6,
+                    tension: 0.3,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { min: 13, max: 15 } }
+            }
+        });
+
+        // Gas Chart
+        new Chart(document.getElementById('gasChart'), {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [
+                    {
+                        label: 'CO2 (ppm)',
+                        data: co2Values,
+                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                        borderRadius: 8,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'CH4 (ppb)',
+                        data: ch4Values,
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                        borderRadius: 8,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { position: 'left', min: 400, title: { display: true, text: 'CO2' } },
+                    y1: { position: 'right', min: 1900, grid: { display: false }, title: { display: true, text: 'CH4' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
