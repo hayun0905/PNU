@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경영학과 진로 선택 가이드: 부산대 vs 경북대</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; scroll-behavior: smooth; }
+        .gradient-header { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
+        .chart-container { position: relative; height: 300px; width: 100%; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Hero Section -->
+    <header class="gradient-header text-white py-16 px-6 text-center shadow-2xl">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block px-4 py-1 bg-blue-500 rounded-full text-sm font-bold mb-4">진로 가이드 리포트 기반</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6">부산대 vs 경북대 경영학과 <br>나에게 맞는 선택은?</h1>
+            <p class="text-lg opacity-80 mb-8">대학 어디가(adiga) 공시 지표와 진로 아웃풋을 분석한 인터랙티브 대시보드</p>
+            <a href="#charts" class="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors">데이터 분석 보기</a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Summary Cards -->
+        <section class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-blue-600">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">🌊 부산대학교 경영대학</h2>
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-center">✨ 금융/물류 특화 (BIFC 금융공기업 인접)</li>
+                    <li class="flex items-center">✨ AACSB 국제인증 획득 (글로벌 표준)</li>
+                    <li class="flex items-center">✨ 수능 최저학력기준 전략적 활용 유리</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-red-600">
+                <h2 class="text-2xl font-bold text-red-800 mb-4">⛰️ 경북대학교 경영학부</h2>
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-center">✨ 공인회계사(CPA) '함현재' 전통적 강세</li>
+                    <li class="flex items-center">✨ IT/데이터 융합 경영 교육 인프라</li>
+                    <li class="flex items-center">✨ 대구 신서혁신도시 공기업 진출 유리</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section id="charts" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">📊 주요 지표 비교 분석</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. 신입생 경쟁률 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-700 mb-4 text-center">신입생 경쟁률 (최근 3년 평균)</h3>
+                    <div class="chart-container">
+                        <canvas id="competitionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 2. 재학생 수 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-700 mb-4 text-center">재학생 규모 (명)</h3>
+                    <div class="chart-container">
+                        <canvas id="studentCountChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 3. 입학 정원 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-700 mb-4 text-center">연간 입학 정원 (명)</h3>
+                    <div class="chart-container">
+                        <canvas id="enrollmentChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 4. 장학금 수혜율 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-700 mb-4 text-center">학생 1인당 장학금 (만원)</h3>
+                    <div class="chart-container">
+                        <canvas id="scholarshipChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 5. 취업률 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-700 mb-4 text-center">평균 취업률 (%)</h3>
+                    <div class="chart-container">
+                        <canvas id="jobChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 6. 평균 등록금 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-bold text-slate-700 mb-4 text-center">연간 평균 등록금 (만원)</h3>
+                    <div class="chart-container">
+                        <canvas id="tuitionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz -->
+        <section class="bg-blue-900 text-white p-10 md:p-16 rounded-[3rem] shadow-2xl overflow-hidden relative">
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold text-center mb-4">🎯 나에게 딱 맞는 경영학과는?</h2>
+                <p class="text-center opacity-70 mb-10 text-lg">가장 중요하게 생각하는 진로 목표를 선택하세요.</p>
+                
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <button onclick="checkChoice('finance')" class="p-6 bg-blue-800 hover:bg-blue-700 rounded-2xl border border-blue-600 transition-all font-bold text-center">💰 금융공기업 <br>취업 목표</button>
+                    <button onclick="checkChoice('cpa')" class="p-6 bg-blue-800 hover:bg-blue-700 rounded-2xl border border-blue-600 transition-all font-bold text-center">📔 회계사(CPA) <br>준비</button>
+                    <button onclick="checkChoice('global')" class="p-6 bg-blue-800 hover:bg-blue-700 rounded-2xl border border-blue-600 transition-all font-bold text-center">🌐 해외 연수 & <br>글로벌 경영</button>
+                    <button onclick="checkChoice('stable')" class="p-6 bg-blue-800 hover:bg-blue-700 rounded-2xl border border-blue-600 transition-all font-bold text-center">⚖️ 안정적인 <br>수능 합격</button>
+                </div>
+
+                <div id="resultBox" class="mt-12 p-8 bg-white text-blue-900 rounded-3xl hidden transform transition-all">
+                    <h4 class="text-2xl font-bold mb-2" id="resultTitle">결과 로딩 중...</h4>
+                    <p id="resultDesc" class="text-lg opacity-80 leading-relaxed"></p>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-500 rounded-full opacity-20"></div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-500 py-12 px-6 text-center border-t border-slate-800">
+        <p class="mb-4">본 데이터는 '대학 어디가' 및 각 대학 공시 자료(2025-2026 추정치)를 기반으로 시뮬레이션된 자료입니다.</p>
+        <p class="text-xs">© 2026 경영학과 진로 가이드 리포트 제작 프로젝트</p>
+    </footer>
+
+    <script>
+        // Chart configuration helpers
+        const chartColors = {
+            pnu: 'rgba(37, 99, 235, 0.8)', // 부산대 블루
+            knu: 'rgba(220, 38, 38, 0.8)', // 경북대 레드
+            pnuHover: 'rgba(37, 99, 235, 1)',
+            knuHover: 'rgba(220, 38, 38, 1)'
+        };
+
+        const createChart = (id, label, pnuData, knuData, unit) => {
+            const ctx = document.getElementById(id).getContext('2d');
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['부산대', '경북대'],
+                    datasets: [{
+                        label: label,
+                        data: [pnuData, knuData],
+                        backgroundColor: [chartColors.pnu, chartColors.knu],
+                        hoverBackgroundColor: [chartColors.pnuHover, chartColors.knuHover],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (ctx) => `${ctx.raw} ${unit}` } }
+                    },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+        };
+
+        // Initialize all charts with hypothetical/latest report data
+        window.onload = () => {
+            createChart('competitionChart', '경쟁률', 12.5, 11.2, ':1');
+            createChart('studentCountChart', '재학생', 1850, 2100, '명');
+            createChart('enrollmentChart', '입학정원', 320, 380, '명');
+            createChart('scholarshipChart', '장학금', 345, 338, '만원');
+            createChart('jobChart', '취업률', 72.4, 71.8, '%');
+            createChart('tuitionChart', '등록금', 446, 451, '만원');
+        };
+
+        // Quiz Logic
+        function checkChoice(type) {
+            const box = document.getElementById('resultBox');
+            const title = document.getElementById('resultTitle');
+            const desc = document.getElementById('resultDesc');
+            
+            box.classList.remove('hidden');
+            
+            switch(type) {
+                case 'finance':
+                    title.innerText = "🌊 부산대학교 경영대학 추천!";
+                    desc.innerText = "부산은 해양 금융 중심지입니다. 한국거래소(KRX) 등 금융공기업 지역인재 할당 혜택을 가장 크게 받을 수 있는 최적의 선택지입니다.";
+                    break;
+                case 'cpa':
+                    title.innerText = "⛰️ 경북대학교 경영학부 추천!";
+                    desc.innerText = "회계사를 꿈꾼다면 전국구 실력을 자랑하는 고시반 '함현재'가 있는 경북대가 유리합니다. 오랜 선후배 네트워크가 당신을 지원할 것입니다.";
+                    break;
+                case 'global':
+                    title.innerText = "🌐 부산대학교 경영대학 추천!";
+                    desc.innerText = "국제 경영 인증(AACSB)을 통해 해외 대학과의 학점 교류 및 글로벌 인턴십 기회가 매우 체계적으로 잘 갖춰져 있습니다.";
+                    break;
+                case 'stable':
+                    title.innerText = "⚖️ 경북대학교 경영학부 추천!";
+                    desc.innerText = "수능 최저 학력 기준이 부산대에 비해 상대적으로 여유로워(3개 영역 합 8), 성적 변동에 따른 불확실성을 줄이고 안정적으로 지원할 수 있습니다.";
+                    break;
+            }
+            
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
