@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김하윤의 빅데이터 분석 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;700&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: block;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-12px);
+            border-color: #38bdf8;
+            box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.3);
+            background: #ffffff;
+        }
+
+        .infographic-box {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, #f1f5f9 0%, #f8fafc 100%);
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .bar-grow {
+            transform-origin: bottom;
+            animation: grow 2s ease-out infinite alternate;
+        }
+
+        @keyframes grow {
+            from { transform: scaleY(0.4); }
+            to { transform: scaleY(1); }
+        }
+
+        .animate-spin-slow {
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-sky-600 rounded-lg flex items-center justify-center text-white font-bold">H</div>
+            <div class="text-xl font-bold tracking-tighter uppercase">BigData <span class="text-sky-600">Analyst</span></div>
+        </div>
+        <div class="space-x-8 hidden md:flex text-slate-600 font-medium items-center">
+            <span class="text-sm bg-slate-100 px-3 py-1 rounded-full text-slate-500">부산 양정고등학교 김하윤</span>
+            <a href="#projects" class="hover:text-sky-600 transition">프로젝트</a>
+            <a href="#" class="px-5 py-2 bg-sky-600 rounded-full text-sm font-bold text-white hover:bg-sky-500 shadow-lg shadow-sky-200 transition">연락하기</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 hero-bg relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-sky-200/40 rounded-full blur-3xl float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-80 h-80 bg-indigo-200/40 rounded-full blur-3xl float-animation" style="animation-delay: -2s;"></div>
+        
+        <div class="mb-4 inline-block px-4 py-1.5 bg-sky-50 text-sky-600 rounded-full text-sm font-bold tracking-wider">
+            YANGJEONG HIGH SCHOOL
+        </div>
+        <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tight text-slate-900 leading-tight">
+            KIM HA YUN <br> <span class="gradient-text">PORTFOLIO</span>
+        </h1>
+        <p class="text-slate-500 text-lg md:text-xl max-w-2xl leading-relaxed font-medium">
+            안녕하세요! <strong>부산 양정고등학교 김하윤</strong>입니다.<br>
+            '빅데이터 분석' 교과를 통해 우리 사회의 현안을 데이터로 탐구한<br>
+            프로젝트 결과물을 소개합니다.
+        </p>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-4xl font-bold mb-3 text-slate-900">분석 프로젝트</h2>
+            <p class="text-slate-500 font-medium">카드를 클릭하여 상세 데이터 분석 보고서를 확인해보세요.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 01: 10대 무면허 운전 -->
+            <a href="https://hayun0905.github.io/PNU/01.html" target="_blank" class="glass-card rounded-2xl p-6 group">
+                <div class="h-48 rounded-xl infographic-box mb-6 flex items-center justify-center">
+                    <svg width="140" height="80" viewBox="0 0 140 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 70L40 30L70 50L100 10L130 40" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="float-animation"/>
+                        <circle cx="100" cy="10" r="10" fill="#ef4444" opacity="0.2">
+                            <animate attributeName="r" values="8;12;8" dur="1.5s" repeatCount="indefinite" />
+                        </circle>
+                        <path d="M96 10L104 10M100 6L100 14" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="0" y="75" width="140" height="2" fill="#cbd5e1"/>
+                    </svg>
+                    <div class="absolute top-4 left-4">
+                        <i class="fa-solid fa-triangle-exclamation text-red-500 animate-pulse"></i>
+                    </div>
+                    <div class="absolute bottom-4 right-4 text-[10px] text-red-600 font-bold font-mono uppercase">Unlicensed Danger</div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-red-600 uppercase tracking-widest bg-red-50 px-2 py-1 rounded">개인 프로젝트</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-red-600 transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 group-hover:text-red-600 transition text-slate-900">10대 무면허 운전 실태 분석</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">청소년 무면허 운전 사고의 급증 원인과 사회적 위험 요인을 공공데이터를 통해 입증했습니다.</p>
+            </a>
+
+            <!-- Project 02: 지구온난화 -->
+            <a href="https://hayun0905.github.io/PNU/02.html" target="_blank" class="glass-card rounded-2xl p-6 group">
+                <div class="h-48 rounded-xl infographic-box mb-6 flex items-center justify-center">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="#f97316" stroke-width="2" stroke-dasharray="10 5" fill="none" class="animate-spin-slow"/>
+                        <circle cx="50" cy="50" r="25" fill="#f97316" opacity="0.3">
+                            <animate attributeName="r" values="20;30;20" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <text x="50" y="55" text-anchor="middle" fill="#ea580c" font-size="12" font-weight="bold">+1.5°C</text>
+                    </svg>
+                    <div class="absolute bottom-4 right-4 text-[10px] text-orange-600 font-bold font-mono uppercase">Global Warming</div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-sky-600 uppercase tracking-widest bg-sky-50 px-2 py-1 rounded">개인 프로젝트</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-orange-500 transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 group-hover:text-sky-600 transition text-slate-900">지구온난화 가속도 현황 분석</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">기온 상승 지표를 시각화하여 환경 위기 데이터 인사이트를 도출했습니다.</p>
+            </a>
+
+            <!-- Project 03: 산불사고 -->
+            <a href="https://hayun0905.github.io/PNU/03.html" target="_blank" class="glass-card rounded-2xl p-6 group">
+                <div class="h-48 rounded-xl infographic-box mb-6 flex items-center justify-center">
+                    <div class="flex items-end gap-2">
+                        <div class="w-4 bg-orange-400 rounded-t bar-grow shadow-sm" style="height: 40px;"></div>
+                        <div class="w-4 bg-orange-500 rounded-t bar-grow shadow-sm" style="height: 80px; animation-delay: 0.2s;"></div>
+                        <div class="w-4 bg-orange-300 rounded-t bar-grow shadow-sm" style="height: 60px; animation-delay: 0.4s;"></div>
+                        <div class="w-4 bg-orange-600 rounded-t bar-grow shadow-sm" style="height: 100px; animation-delay: 0.6s;"></div>
+                    </div>
+                    <div class="absolute bottom-4 right-4 text-[10px] text-orange-600 font-bold font-mono uppercase">Wildfire Data</div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-2 py-1 rounded">조별 프로젝트</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-orange-500 transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition text-slate-900">국내 산불사고 발생 현황 분석</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">지역별 산불 발생 빈도와 면적을 비교 분석한 프로젝트입니다.</p>
+            </a>
+
+            <!-- Project 04: 부산대 vs 경북대 -->
+            <a href="https://hayun0905.github.io/PNU/04.html" target="_blank" class="glass-card rounded-2xl p-6 group">
+                <div class="h-48 rounded-xl infographic-box mb-6 flex items-center justify-center">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <polygon points="50,10 90,50 50,90 10,50" stroke="#059669" stroke-width="2" fill="rgba(5, 150, 105, 0.1)"/>
+                        <polygon points="50,25 75,50 50,75 25,50" stroke="#0284c7" stroke-width="2" fill="rgba(2, 132, 199, 0.1)"/>
+                        <line x1="50" y1="10" x2="50" y2="90" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="10" y1="50" x2="90" y2="50" stroke="#e2e8f0" stroke-width="1"/>
+                    </svg>
+                    <div class="absolute bottom-4 right-4 text-[10px] text-emerald-700 font-bold font-mono uppercase">Uni Comparison</div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-sky-600 uppercase tracking-widest bg-sky-50 px-2 py-1 rounded">개인 프로젝트</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 group-hover:text-emerald-600 transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 group-hover:text-sky-600 transition text-slate-900">부산대 vs 경북대 경영학과 비교</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">입결 점수 및 인프라 데이터를 기반으로 국립대 경영학과를 분석했습니다.</p>
+            </a>
+
+            <!-- 대학별 교육비 분석 (준비중) -->
+            <div class="glass-card rounded-2xl p-6 opacity-70 bg-slate-50 border-dashed border-slate-300">
+                <div class="h-48 rounded-xl bg-slate-100 mb-6 flex items-center justify-center grayscale opacity-40">
+                    <i class="fa-solid fa-coins text-5xl text-slate-400"></i>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Coming Soon</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-400">대학별 1인당 교육비 분석</h3>
+                <p class="text-slate-400 text-sm">교육 투자의 가치를 데이터로 정제 중인 프로젝트입니다.</p>
+            </div>
+
+            <!-- AI윤리 유튜브 분석 (준비중) -->
+            <div class="glass-card rounded-2xl p-6 opacity-70 bg-slate-50 border-dashed border-slate-300">
+                <div class="h-48 rounded-xl bg-slate-100 mb-6 flex items-center justify-center grayscale opacity-40">
+                    <i class="fa-brands fa-youtube text-5xl text-slate-400"></i>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Coming Soon</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-400">AI윤리 유튜브 콘텐츠 여론 분석</h3>
+                <p class="text-slate-400 text-sm">텍스트 마이닝을 활용한 조별 과제 프로젝트입니다.</p>
+            </div>
+
+             <!-- 사이버폭력 분석 (준비중) -->
+             <div class="glass-card rounded-2xl p-6 opacity-70 bg-slate-50 border-dashed border-slate-300 lg:col-start-2">
+                <div class="h-48 rounded-xl bg-slate-100 mb-6 flex items-center justify-center grayscale opacity-40">
+                    <i class="fa-solid fa-user-shield text-5xl text-slate-400"></i>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Coming Soon</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-400">사이버폭력 실태 데이터 분석</h3>
+                <p class="text-slate-400 text-sm">통계 자료를 활용한 심층 사회 문제 분석 프로젝트입니다.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200 bg-white px-6 text-center">
+        <div class="mb-4 font-bold text-slate-900">부산 양정고등학교 김하윤</div>
+        <p class="text-slate-500 text-sm font-medium">&copy; 2024 Kim Ha Yun. Big Data Analysis Portfolio.</p>
+    </footer>
+
+</body>
+</html>
