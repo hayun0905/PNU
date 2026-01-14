@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K팝 데몬 헌터스: 글로벌 신드롬</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #f43f5e, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.3);
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #334155;
+            border-radius: 10px;
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 p-4 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-white hover:text-rose-500 transition-colors">
+                <i class="fas fa-home text-xl"></i>
+                <span class="font-bold text-lg hidden sm:inline">홈으로</span>
+            </a>
+            <div class="text-xs text-slate-400 uppercase tracking-widest font-bold">K-Culture Syndrome Report</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-rose-500 font-bold tracking-widest mb-4 uppercase text-sm sm:text-base animate-bounce">Global Hit Animation</h2>
+            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">
+                K팝 데몬 헌터스: <br>
+                <span class="gradient-text">세계를 사로잡은 K-컬처 신드롬</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                미국 소니 픽처스 제작, 넷플릭스 배급. K팝과 한국 전통문화를 절묘하게 결합하여 전 세계 영화 차트와 음악 차트를 동시에 석권한 기념비적 작품입니다.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 bg-slate-800 rounded-full text-sm border border-slate-700">#넷플릭스1위</span>
+                <span class="px-4 py-2 bg-slate-800 rounded-full text-sm border border-slate-700">#빌보드석권</span>
+                <span class="px-4 py-2 bg-slate-800 rounded-full text-sm border border-slate-700">#굿즈품절대란</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Dashboard -->
+    <section class="py-16 px-6 bg-slate-900">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold mb-10 flex items-center">
+                <i class="fas fa-chart-line text-rose-500 mr-3"></i> 숫자로 보는 글로벌 성공
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Stat 1 -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 card-hover">
+                    <div class="text-slate-500 text-sm font-bold mb-2 uppercase">Netflix Performance</div>
+                    <div class="text-4xl font-black text-rose-500 mb-2">41개국</div>
+                    <div class="text-xl font-bold text-white mb-4">시청 순위 1위 달성</div>
+                    <p class="text-slate-400 text-sm">공개 직후부터 전 세계 영화 부문 최상위권 유지 및 신드롬 형성.</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 card-hover">
+                    <div class="text-slate-500 text-sm font-bold mb-2 uppercase">Billboard Chart</div>
+                    <div class="text-4xl font-black text-rose-500 mb-2">Billboard #1</div>
+                    <div class="text-xl font-bold text-white mb-4">가상 아티스트 최초</div>
+                    <p class="text-slate-400 text-sm">OST '골든(Golden)'이 빌보드 글로벌 200 차트 정상을 차지하며 음악성 증명.</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 card-hover">
+                    <div class="text-slate-500 text-sm font-bold mb-2 uppercase">Album Sales</div>
+                    <div class="text-4xl font-black text-rose-500 mb-2">No. 2</div>
+                    <div class="text-xl font-bold text-white mb-4">빌보드 200 차트 2위</div>
+                    <p class="text-slate-400 text-sm">영화 수록곡 전체가 인기를 얻으며 사운드트랙 앨범 판매량 급증.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secrets of Success -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold mb-8">K-컬처의 재발견과 <br><span class="text-rose-500">파급 효과</span></h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-rose-500">
+                                <i class="fas fa-om"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">전통과 현대의 조화</h4>
+                                <p class="text-slate-400">저승사자, 호적도(까치호랑이), 사인검 등 한국적 요소를 세련되게 재해석하여 글로벌 감각에 맞췄습니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-rose-500">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">국립중앙박물관 '굿즈 대란'</h4>
+                                <p class="text-slate-400">영화 속 '까치호랑이' 캐릭터 인기로 관련 배지와 인형이 품절되는 사태가 발생했습니다. <span class="text-rose-500 font-bold">[SOLD OUT]</span></p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-rose-500">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">글로벌 마케팅 활용</h4>
+                                <p class="text-slate-400">삼성전자 등 글로벌 기업들이 '세눈박이 까치' 캐릭터를 광고에 활용하며 마케팅 효과를 톡톡히 보고 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-square bg-gradient-to-tr from-rose-600/20 to-orange-500/20 rounded-3xl overflow-hidden border border-slate-700 flex items-center justify-center p-8">
+                        <div class="text-center space-y-4">
+                            <i class="fas fa-shield-cat text-9xl text-rose-500/40"></i>
+                            <p class="text-slate-500 italic">"한국의 정체성을 잃지 않은 긍지와 자부심의 승화"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Feedback (Comments Section) -->
+    <section class="py-16 px-6 bg-slate-800/50">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold mb-8 text-center">대중의 목소리: 리얼 보이스</h3>
+            <div class="scroll-container h-96 overflow-y-auto space-y-4 p-4 bg-slate-900 rounded-3xl border border-slate-800">
+                <!-- Comment 1 -->
+                <div class="p-4 bg-slate-800 rounded-2xl border-l-4 border-rose-500">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-rose-400">@엄성천-d1i</span>
+                        <span class="text-xs text-slate-500">2025-12-14</span>
+                    </div>
+                    <p class="text-sm text-slate-300">"대한민국의 정체성을 잃지 않으시고 긍지의 자부심으로 승화시킨 점 높이 찬사와 감사드립니다. 문화 예술은 애국심을 바탕으로 한 재외 동포들의 노고와 헌신에 고맙습니다."</p>
+                </div>
+                <!-- Comment 2 -->
+                <div class="p-4 bg-slate-800 rounded-2xl border-l-4 border-slate-600">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-rose-400">@현대노령무전고통</span>
+                        <span class="text-xs text-slate-500">2025-12-14</span>
+                    </div>
+                    <p class="text-sm text-slate-300">"제3자이지만 그렇기에 한국 사회의 후진성에 오염되지 않은 냉철한 관점에서 한국인들의 잊혀진 전통 가치와 문화를 세계에 소개하고 성공할 수 있었다."</p>
+                </div>
+                <!-- Comment 3 -->
+                <div class="p-4 bg-slate-800 rounded-2xl border-l-4 border-slate-600">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-rose-400">@Regentsjohn</span>
+                        <span class="text-xs text-slate-500">2025-10-14</span>
+                    </div>
+                    <p class="text-sm text-slate-300">"미국의 어린이들을 매료시켰다는 점이 중요하네요. 향후 수십 년 이상 한류를 이어갈 수 있는 기회를 열어준 것입니다."</p>
+                </div>
+                <!-- Comment 4 -->
+                <div class="p-4 bg-slate-800 rounded-2xl border-l-4 border-slate-600">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-rose-400">@북해의별-m8k</span>
+                        <span class="text-xs text-slate-500">2025-11-14</span>
+                    </div>
+                    <p class="text-sm text-slate-300">"김구 선생님이 꿈꾸셨던 문화강국 보고 계시나요?"</p>
+                </div>
+                <!-- Comment 5 -->
+                <div class="p-4 bg-slate-800 rounded-2xl border-l-4 border-rose-500">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold text-rose-400">@0.K.J.W.0</span>
+                        <span class="text-xs text-slate-500">2025-08-14</span>
+                    </div>
+                    <p class="text-sm text-slate-300">"소니가 제작했으나 모든 노래는 우리나라 작곡가들이 만들었기에 절대 우리에게 나쁜 게 아님. 미국에서 한국행 비행기 가격이 상승하고 있다는 건 관광객이 엄청나게 늘어났단 소리임."</p>
+                </div>
+            </div>
+            <p class="text-center mt-6 text-slate-500 text-xs italic">데이터 출처: NotebookLM 기반 소셜 피드 요약</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-800 text-center">
+        <div class="mb-4">
+            <span class="text-2xl font-black gradient-text uppercase tracking-tighter">K-DEMON HUNTERS</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-8">© 2026 K-Culture Global Analytics. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 text-slate-400">
+            <a href="#" class="hover:text-rose-500"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-rose-500"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // 간단한 스크롤 애니메이션 효과
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.card-hover').forEach(card => {
+                card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
