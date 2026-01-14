@@ -46,18 +46,22 @@
     <!-- Navigation -->
     <nav class="sticky-nav bg-white/80 border-b border-gray-200 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-800 text-red-600 flex items-center gap-2">
-                <i class="fas fa-exclamation-triangle"></i>
-                <span>Road Alert</span>
-            </a>
+            <!-- 왼쪽에 새롭게 배치된 홈 버튼 및 로고 -->
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="bg-red-600 text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-red-700 transition-all shadow-md" title="홈으로 이동">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a href="index.html" class="text-2xl font-800 text-red-600 flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="hidden sm:inline">Road Alert</span>
+                </a>
+            </div>
+            
             <div class="flex gap-6 items-center">
                 <a href="#home" class="hover:text-red-600 font-semibold transition-colors">홈</a>
                 <a href="#statistics" class="hover:text-red-600 font-semibold transition-colors">통계</a>
                 <a href="#pm-issue" class="hover:text-red-600 font-semibold transition-colors">PM 이슈</a>
                 <a href="#guide" class="hover:text-red-600 font-semibold transition-colors">가이드</a>
-                <a href="index.html" class="bg-red-600 text-white px-4 py-2 rounded-full text-sm hover:bg-red-700 transition-all">
-                    <i class="fas fa-home mr-1"></i> HOME
-                </a>
             </div>
         </div>
     </nav>
@@ -67,11 +71,11 @@
         <div class="max-w-4xl mx-auto">
             <span class="bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block alert-pulse">기획 리포트</span>
             <h1 class="text-4xl md:text-6xl font-800 mb-6 leading-tight">
-                10대 무면허 운전 실태 <br> <span class="text-red-500 text-shadow">도로 위 '빨간불'</span>
+                10대 무면허 운전 실태 <br> <span class="text-red-500">도로 위 '빨간불'</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
-                가수 정동원의 기소유예 사건으로 본 청소년 교통법규 위반의 엄중함.<br>
-                단순한 호기심을 넘어 도로 위의 테러가 된 10대들의 실태를 분석합니다.
+                청소년 교통법규 위반의 엄중함과 사회적 문제 제기.<br>
+                단순한 호기심을 넘어 도로 위의 위험이 된 10대들의 실태를 분석합니다.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#statistics" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all">통계 데이터 보기</a>
@@ -88,23 +92,20 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <!-- Total Accidents -->
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
                 <div class="text-red-600 mb-4"><i class="fas fa-car-crash text-3xl"></i></div>
                 <h3 class="text-gray-500 font-semibold mb-2">총 사고 건수</h3>
                 <div class="text-4xl font-800">6,065<span class="text-lg font-normal ml-1">건</span></div>
                 <p class="mt-4 text-sm text-red-500 font-semibold">
-                    <i class="fas fa-arrow-up mr-1"></i> 2024년 1,378건 (증가세)
+                    <i class="fas fa-arrow-up mr-1"></i> 연평균 1,200건 이상
                 </p>
             </div>
-            <!-- Injuries -->
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
                 <div class="text-blue-600 mb-4"><i class="fas fa-user-injured text-3xl"></i></div>
                 <h3 class="text-gray-500 font-semibold mb-2">총 부상자 수</h3>
                 <div class="text-4xl font-800">7,788<span class="text-lg font-normal ml-1">명</span></div>
-                <p class="mt-4 text-sm text-gray-500">사고 건수와 상관계수 0.993</p>
+                <p class="mt-4 text-sm text-gray-500">지속적인 발생 추세</p>
             </div>
-            <!-- Fatalities -->
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
                 <div class="text-gray-800 mb-4"><i class="fas fa-skull text-3xl"></i></div>
                 <h3 class="text-gray-500 font-semibold mb-2">총 사망자 수</h3>
@@ -115,10 +116,10 @@
 
         <div class="bg-gray-900 text-white p-8 rounded-3xl flex flex-col md:flex-row items-center gap-10">
             <div class="flex-1">
-                <h3 class="text-2xl font-bold mb-4 text-red-400">무면허 적발 4년 새 2배 폭증</h3>
+                <h3 class="text-2xl font-bold mb-4 text-red-400">무면허 적발 급증 추세</h3>
                 <p class="text-gray-400 leading-relaxed mb-6">
-                    경찰청 자료에 따르면 무면허 적발 건수는 2020년 4만여 건에서 2024년 7만 9천여 건으로 약 86.5% 급증했습니다. 
-                    특히 전체 적발 인원 중 <span class="text-white font-bold">20대 미만이 약 36%</span>를 차지하여 미성년자의 교통법규 준수 의식이 심각한 수준임을 보여줍니다.
+                    경찰청 자료에 따르면 무면허 적발 건수는 최근 수년간 꾸준히 증가하고 있습니다. 
+                    특히 전체 적발 인원 중 <span class="text-white font-bold">20대 미만 비중</span>이 적지 않아 미성년자의 교통법규 준수 의식이 심각한 수준임을 보여줍니다.
                 </p>
                 <div class="flex gap-4">
                     <div class="bg-gray-800 px-4 py-2 rounded-lg">
@@ -127,20 +128,20 @@
                     </div>
                     <div class="text-red-500 flex items-center"><i class="fas fa-chevron-right"></i></div>
                     <div class="bg-gray-800 px-4 py-2 rounded-lg border border-red-500/30">
-                        <div class="text-xs text-gray-500 uppercase">2024년</div>
+                        <div class="text-xs text-gray-500 uppercase">최근 추산</div>
                         <div class="font-bold">79,326건</div>
                     </div>
                 </div>
             </div>
             <div class="w-full md:w-1/3 bg-gray-800 p-6 rounded-2xl">
-                <div class="text-center mb-4 text-sm text-gray-400">사고 비중 분포</div>
+                <div class="text-center mb-4 text-sm text-gray-400">사고 발생률 추이</div>
                 <div class="flex justify-center items-end gap-3 h-40">
                     <div class="bg-gray-700 w-8 h-1/4 rounded-t-md"></div>
                     <div class="bg-gray-700 w-8 h-2/4 rounded-t-md"></div>
                     <div class="bg-red-500 w-8 h-5/6 rounded-t-md shadow-[0_0_15px_rgba(239,68,68,0.5)]"></div>
                     <div class="bg-red-600 w-8 h-full rounded-t-md shadow-[0_0_20px_rgba(239,68,68,0.6)]"></div>
                 </div>
-                <div class="mt-4 text-xs text-center text-gray-500">2020 → 2024 추이</div>
+                <div class="mt-4 text-xs text-center text-gray-500">연도별 증가 그래프 (예시)</div>
             </div>
         </div>
     </section>
@@ -149,10 +150,12 @@
     <section id="pm-issue" class="py-20 bg-red-50 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-                <img src="https://images.unsplash.com/photo-1597075095400-b6e589877477?q=80&w=1000&auto=format&fit=crop" alt="전동 킥보드" class="rounded-3xl shadow-xl">
+                <div class="rounded-3xl shadow-xl overflow-hidden bg-gray-200 aspect-video flex items-center justify-center text-gray-400">
+                    <i class="fas fa-scooter text-6xl"></i>
+                </div>
             </div>
             <div>
-                <h2 class="text-3xl font-800 mb-6">전동 킥보드(PM) <br>사고 2건 중 1건은 <span class="text-red-600 underline underline-offset-8">무면허</span></h2>
+                <h2 class="text-3xl font-800 mb-6">전동 킥보드(PM) <br>사고 상당수가 <span class="text-red-600 underline underline-offset-8">무면허</span></h2>
                 <div class="space-y-6">
                     <div class="flex gap-4">
                         <div class="bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm text-red-600 shrink-0">
@@ -168,13 +171,13 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg">15세 이하 사고가 더 많음</h4>
-                            <p class="text-gray-600 text-sm">최근 PM 사고 중 15세 이하(1,388명)가 16~19세(1,318명)보다 많은 기현상이 발생하고 있습니다.</p>
+                            <h4 class="font-bold text-lg">어린 연령층 사고 증가</h4>
+                            <p class="text-gray-600 text-sm">최근 면허가 없는 중고등학생들의 PM 이용 중 사고가 빈번하게 발생하고 있습니다.</p>
                         </div>
                     </div>
                     <div class="bg-red-600 text-white p-6 rounded-2xl">
-                        <div class="text-sm opacity-80 mb-1">최근 3개년 PM 무면허 비중</div>
-                        <div class="text-3xl font-800">49% <span class="text-lg font-normal">(3,442건)</span></div>
+                        <div class="text-sm opacity-80 mb-1">PM 무면허 사고 비중</div>
+                        <div class="text-3xl font-800">49% <span class="text-lg font-normal">(조사 대상 중)</span></div>
                     </div>
                 </div>
             </div>
@@ -189,25 +192,22 @@
         </div>
 
         <div class="space-y-4">
-            <!-- 16 -->
             <div class="flex items-center gap-6 p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:border-red-200 transition-all">
                 <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-2xl font-800 text-gray-400">16세</div>
                 <div class="flex-1">
                     <h3 class="font-bold text-lg mb-1">원동기장치자전거 면허</h3>
                     <p class="text-gray-500 text-sm">전동 킥보드, 소형 이륜차(125cc 이하) 운행 가능</p>
                 </div>
-                <div class="text-green-500 font-bold">가능</div>
+                <div class="text-green-500 font-bold">취득 가능</div>
             </div>
-            <!-- 18 -->
             <div class="flex items-center gap-6 p-6 bg-white border-2 border-red-100 rounded-2xl shadow-md hover:border-red-300 transition-all">
                 <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center text-2xl font-800 text-red-600">18세</div>
                 <div class="flex-1">
                     <h3 class="font-bold text-lg mb-1">제1종·제2종 보통 면허</h3>
-                    <p class="text-gray-500 text-sm font-semibold">일반 승용차 운전 가능 (가장 많은 사고 연령대)</p>
+                    <p class="text-gray-500 text-sm font-semibold">일반 승용차 운전 가능 (생일 이후 취득 가능)</p>
                 </div>
                 <div class="text-red-600 font-bold">자동차 가능</div>
             </div>
-            <!-- 19 -->
             <div class="flex items-center gap-6 p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:border-gray-200 transition-all">
                 <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-2xl font-800 text-gray-400">19세</div>
                 <div class="flex-1">
@@ -236,12 +236,12 @@
             <div class="text-center md:text-left">
                 <div class="text-xl font-800 text-gray-400 mb-2">Road Alert Report</div>
                 <p class="text-sm text-gray-500">
-                    기획: 김하윤 기자 | 자료출처: 경찰청, 도로교통공단, 고동진 의원실 <br>
+                    기획: 리포트 팀 | 자료출처: 경찰청, 도로교통공단 <br>
                     © 2026 Road Alert. All rights reserved.
                 </p>
             </div>
             <div class="flex gap-4">
-                <button onclick="window.scrollTo(0,0)" class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-red-600 hover:text-white transition-all">
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-red-600 hover:text-white transition-all">
                     <i class="fas fa-arrow-up"></i>
                 </button>
             </div>
@@ -250,9 +250,9 @@
 
     <!-- Home Floating Button -->
     <div class="fixed bottom-8 right-8 z-50">
-        <button onclick="window.scrollTo(0,0)" class="bg-red-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-xl hover:scale-110 active:scale-95 transition-all">
+        <a href="index.html" class="bg-red-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-xl hover:scale-110 active:scale-95 transition-all" title="홈으로 이동">
             <i class="fas fa-home"></i>
-        </button>
+        </a>
     </div>
 
 </body>
